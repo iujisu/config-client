@@ -1,0 +1,20 @@
+server:
+  port: 8088
+
+--- # 문서의 시작
+  
+spring:
+  application:
+    name: config-dev
+  config:
+    import: optional:configserver:http://localhost:9900
+
+    
+# spring-boot-starter-actuator 변경된 내용 실시간 반영
+--- # 문서의 시작
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
